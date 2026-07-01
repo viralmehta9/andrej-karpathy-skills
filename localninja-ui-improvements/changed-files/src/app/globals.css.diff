@@ -1,0 +1,86 @@
+diff --git a/src/app/globals.css b/src/app/globals.css
+index a6d4ce9..1b05c05 100644
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@ -334,6 +334,12 @@ button:focus-visible,
+   animation: float 4s ease-in-out infinite;
+ }
+ 
++@media (prefers-reduced-motion: reduce) {
++  .floating-element {
++    animation: none;
++  }
++}
++
+ .hero-grid {
+   display: grid;
+   grid-template-columns: 1fr 1.1fr;
+@@ -436,6 +442,60 @@ button:focus-visible,
+   border-radius: 0.5rem;
+ }
+ 
++/* Hero trust row — social proof + risk-reversal beneath the CTAs */
++.hero-trust {
++  display: flex;
++  align-items: center;
++  flex-wrap: wrap;
++  gap: 0.75rem 1.75rem;
++  margin-top: 1.75rem;
++}
++
++.hero-trust__rating {
++  display: inline-flex;
++  align-items: center;
++  gap: 0.5rem;
++}
++
++.hero-trust__stars {
++  display: inline-flex;
++  color: #F59E0B;
++}
++
++.hero-trust__rating-text {
++  font-size: 0.9375rem;
++  color: var(--color-text-secondary);
++}
++
++.hero-trust__rating-text strong {
++  color: var(--color-text-dark);
++  font-weight: 700;
++}
++
++.hero-trust__points {
++  display: inline-flex;
++  flex-wrap: wrap;
++  align-items: center;
++  gap: 0.5rem 1.25rem;
++  list-style: none;
++  margin: 0;
++  padding: 0;
++}
++
++.hero-trust__points li {
++  display: inline-flex;
++  align-items: center;
++  gap: 0.375rem;
++  font-size: 0.9375rem;
++  font-weight: 500;
++  color: var(--color-text-secondary);
++}
++
++.hero-trust__points li svg {
++  color: var(--color-success);
++  flex-shrink: 0;
++}
++
+ .hero-visual {
+   display: flex;
+   justify-content: center;
+@@ -831,6 +891,7 @@ button:focus-visible,
+   .hero h1 { font-size: 2.75rem; max-width: 100%; margin-left: auto; margin-right: auto; }
+   .hero p { max-width: 600px; margin-left: auto; margin-right: auto; }
+   .hero-buttons { justify-content: center; }
++  .hero-trust { justify-content: center; }
+   .hero-visual { order: -1; }
+   .hero-mockup-frame { max-width: 560px; transform: none; }
+   .profile-grid { grid-template-columns: repeat(2, 1fr); }
