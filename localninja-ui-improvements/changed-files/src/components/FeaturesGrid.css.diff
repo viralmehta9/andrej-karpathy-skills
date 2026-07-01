@@ -1,0 +1,14 @@
+diff --git a/src/components/FeaturesGrid.css b/src/components/FeaturesGrid.css
+index 43f70a9..1e3a48b 100644
+--- a/src/components/FeaturesGrid.css
++++ b/src/components/FeaturesGrid.css
+@@ -84,7 +84,8 @@
+   transition: all 0.3s ease;
+ }
+ 
+-.feature-card:hover .feature-learn-more {
++.feature-card:hover .feature-learn-more,
++.feature-card:focus-within .feature-learn-more {
+   opacity: 1;
+   transform: translateX(0);
+ }
